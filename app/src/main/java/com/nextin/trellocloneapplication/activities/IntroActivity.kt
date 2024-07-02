@@ -1,5 +1,6 @@
 package com.nextin.trellocloneapplication.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
@@ -17,5 +18,12 @@ class IntroActivity : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
+
+        binding.introSignUp.setOnClickListener {
+            startActivity(Intent(this, SignUpActivity::class.java))
+        }
+        binding.introSignIn.setOnClickListener {
+            startActivity(Intent(this, LoginActivity::class.java))
+        }
     }
 }

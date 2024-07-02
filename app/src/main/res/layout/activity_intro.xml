@@ -13,7 +13,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TRELLO"
-
         android:textSize="40sp"
         android:layout_marginTop="30dp"
         android:textColor="@color/intro_heading_color"
@@ -53,8 +52,7 @@
         android:text="@string/introQuote"
         android:textColor="#8D8A8A"
         android:textSize="13sp"
-        android:gravity="center"
-
+        android:gravity="center_horizontal"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
         android:layout_marginTop="10dp"
@@ -63,7 +61,7 @@
         app:layout_constraintEnd_toEndOf="@id/tv_lets_start"/>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_sign_in"
+        android:id="@+id/intro_sign_in"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/intro_sign_in_btn"
@@ -79,12 +77,13 @@
         android:layout_marginEnd="30dp"/>
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/intro_sign_up"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/intro_sign_up_bg"
-        app:layout_constraintStart_toStartOf="@id/btn_sign_in"
-        app:layout_constraintTop_toBottomOf="@id/btn_sign_in"
-        app:layout_constraintEnd_toEndOf="@id/btn_sign_in"
+        app:layout_constraintStart_toStartOf="@id/intro_sign_in"
+        app:layout_constraintTop_toBottomOf="@id/intro_sign_in"
+        app:layout_constraintEnd_toEndOf="@id/intro_sign_in"
         android:layout_marginStart="30dp"
         android:text="SIGN UP"
         android:textSize="20sp"
@@ -92,6 +91,7 @@
         android:padding="8dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="30dp"/>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
