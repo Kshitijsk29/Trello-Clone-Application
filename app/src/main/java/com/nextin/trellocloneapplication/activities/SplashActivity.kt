@@ -6,7 +6,9 @@ import android.os.Bundle
 import android.os.Handler
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
+import com.nextin.trellocloneapplication.MainActivity
 import com.nextin.trellocloneapplication.databinding.ActivitySplashBinding
+import com.nextin.trellocloneapplication.firestore.FirebaseClass
 
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity() {
@@ -22,7 +24,14 @@ class SplashActivity : AppCompatActivity() {
        )
 
         Handler().postDelayed({
-            startActivity(Intent(this,IntroActivity::class.java))
+            
+            val currentUserId = FirebaseClass().getCurrentUserId()
+            if (currentUserId.isNotEmpty()){
+                startActivity(Intent(this,MainActivity::class.java))
+            }
+            else{
+                startActivity(Intent(this,IntroActivity::class.java))
+            }
             finish()
         },3000)
     }

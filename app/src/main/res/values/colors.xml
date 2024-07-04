@@ -4,4 +4,8 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="intro_heading_color">#3374D0</color>
+
+    <color name="colorPrimary">#3374D0</color>
+    <color name="colorPrimaryDark">#3374D0</color>
+    <color name="colorAccent">#3374D0</color>
 </resources>

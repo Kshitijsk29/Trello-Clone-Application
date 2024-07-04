@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.nextin.trellocloneapplication" />
+                  <option name="mobileSdkAppId" value="1:831233660451:android:57ef264b9a1d0a9c1b8396" />
+                  <option name="projectId" value="trello-clone-application" />
+                  <option name="projectNumber" value="831233660451" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
