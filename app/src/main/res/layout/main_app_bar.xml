@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
+    android:background="#EAE7E7"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
@@ -19,7 +20,6 @@
             android:layout_height="?attr/actionBarSize"
             android:background="#2466D9"
             app:popupTheme="@style/Theme.TrelloCloneApplication.PopupOverlay"/>
-
     </com.google.android.material.appbar.AppBarLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

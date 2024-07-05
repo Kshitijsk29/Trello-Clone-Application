@@ -7,7 +7,6 @@ import android.view.WindowManager
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
@@ -16,6 +15,7 @@ import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.nextin.trellocloneapplication.R.id.mainActivity_ToolBar
 import com.nextin.trellocloneapplication.activities.IntroActivity
+import com.nextin.trellocloneapplication.activities.MyProfileActivity
 import com.nextin.trellocloneapplication.activities.ReusableActivity
 import com.nextin.trellocloneapplication.databinding.ActivityMainBinding
 import com.nextin.trellocloneapplication.firestore.FirebaseClass
@@ -23,9 +23,7 @@ import com.nextin.trellocloneapplication.models.Users
 
 class MainActivity : ReusableActivity(), NavigationView.OnNavigationItemSelectedListener {
 
-    private val binding : ActivityMainBinding by lazy{
-        ActivityMainBinding.inflate(layoutInflater)
-    }
+
    private val image : ImageView
         get() = findViewById(R.id.profile_image)
 
@@ -33,6 +31,10 @@ class MainActivity : ReusableActivity(), NavigationView.OnNavigationItemSelected
         get() = findViewById(R.id.userNameHeader)
     private val userEmail : TextView
         get()= findViewById(R.id.userEmailHeader)
+
+    private val binding : ActivityMainBinding by lazy{
+        ActivityMainBinding.inflate(layoutInflater)
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
@@ -41,7 +43,7 @@ class MainActivity : ReusableActivity(), NavigationView.OnNavigationItemSelected
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN)
 
-        FirebaseClass().signUser(this)
+        FirebaseClass().loadingDataFromFireStore(this)
 
         setActionBar()
 
@@ -79,6 +81,9 @@ class MainActivity : ReusableActivity(), NavigationView.OnNavigationItemSelected
     }
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
+            R.id.menu_profile->{
+                startActivity(Intent(this@MainActivity , MyProfileActivity::class.java))
+            }
             R.id.menu_home ->{
                 Toast.makeText(this, "Welcome  to Home Screen",
                     Toast.LENGTH_SHORT).show()

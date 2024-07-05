@@ -5,11 +5,8 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.view.WindowManager
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import com.google.firebase.auth.FirebaseAuth
 import com.nextin.trellocloneapplication.MainActivity
-import com.nextin.trellocloneapplication.R
 import com.nextin.trellocloneapplication.databinding.ActivityLoginBinding
 import com.nextin.trellocloneapplication.firestore.FirebaseClass
 import com.nextin.trellocloneapplication.models.Users
@@ -54,7 +51,7 @@ class LoginActivity : ReusableActivity() {
             FirebaseAuth.getInstance().signInWithEmailAndPassword(emailId,pass).addOnCompleteListener {
                     task ->
                 if (task.isSuccessful){
-                    FirebaseClass().signUser(this)
+                    FirebaseClass().loadingDataFromFireStore(this)
                 }
                 else{
                     Toast.makeText(this, "Login Failed due to ${task.exception}",
